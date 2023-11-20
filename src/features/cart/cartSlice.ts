@@ -1,5 +1,6 @@
 // src/features/cart/cartSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { RootState } from '../../app/store';
 
 interface CartState {
 items: { product: any; quantity: number }[];
@@ -30,6 +31,13 @@ reducers: {
     // 여기에 필요한 다른 액션들을 추가할 수 있습니다.
 },
 });
+
+export const selectCartTotal = (state: RootState) =>
+  state.cart.items.reduce(
+    (total, item) => total + item.product.price * item.quantity,
+    0
+);
+
 
 export const { addToCart, removeFromCart } = cartSlice.actions;
 
