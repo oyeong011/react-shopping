@@ -1,0 +1,39 @@
+.Nav-Bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #fff;
+  z-index: 100;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.Nav-Bar a {
+  font-size: 50px;
+  font-weight: 700;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+.Nav-Bar .nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-left: 20px;
+}
+.Nav-Bar .nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 30px;
+  font-weight: 500;
+  margin-left: 20px;
+}
+.Nav-Bar .nav-menu a:hover {
+  color: #755c5c;
+}/*# sourceMappingURL=Header.css.map */
