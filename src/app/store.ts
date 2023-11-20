@@ -1,4 +1,4 @@
-import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import productsReducer from '../features/counter/products/productsSlice';
 
 export const store = configureStore({

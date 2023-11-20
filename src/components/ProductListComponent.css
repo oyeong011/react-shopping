@@ -50,6 +50,10 @@
   border: 1px solid #ddd;
   padding: 10px;
   background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.product-item:hover {
+  scale: 1.1;
 }
 .product-item .image-container {
   height: 200px;
