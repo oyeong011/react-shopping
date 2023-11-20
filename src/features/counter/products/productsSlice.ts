@@ -11,6 +11,7 @@ interface Product {
   price : number;
   category : string;
   image: string;
+  description: string;
   // 기타 필요한 상품 속성
 }
 

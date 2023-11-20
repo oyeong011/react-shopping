@@ -6,6 +6,7 @@ import { productsLoaded, selectFilteredProducts } from '../features/counter/prod
 import './ProductListComponent.css';
 import CategoryButtons from './CategoryButtons';
 import { useNavigate } from 'react-router-dom';
+import { addToCart } from '../features/cart/cartSlice';
 
 const ProductListComponent: React.FC = () => {
     const dispatch = useDispatch();
@@ -32,22 +33,31 @@ const ProductListComponent: React.FC = () => {
     const handleProductClick = (productId: number) => {
         navigate(`/products/${productId}`);
     };
+    const handleAddToCart = (product: any, e : any) => {
+        e.preventDefault();
+        e.stopPropagation();
+        alert(`${product.title}을 장바구니에 담았습니다.`);
+        dispatch(addToCart({ product, quantity: 1 }));
+    };
 
     return (
         <div className='main-container'>
             <CategoryButtons />
             <div className="product-list">
                 {products.map((product) => (
-                    <div key={product.id} className="product-item"
-                    onClick={() => { handleProductClick(product.id)}}>
+                    <div 
+                        key={product.id} 
+                        className="product-item"
+                        onClick={() => { handleProductClick(product.id)}}
+                    >
                         <div className="title">{product.title}</div>
                         <div className="image-container">
                             <img src={product.image} alt={product.title} />
                         </div>
                         <div className="price">
                             <button
-                                onClick={() => {
-
+                                onClick={(event) => {
+                                    handleAddToCart(product, event)
                                 }}
                             >
                                 장바구니 담기

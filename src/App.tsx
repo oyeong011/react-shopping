@@ -3,6 +3,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductListComponent from './components/ProductListComponent';
 import Header from './components/Header';
+import ProductDetailComponent from './components/ProductDetailComponent';
+import CartPage from './page/CartPage';
 
 const App: React.FC = () => {
   return (
@@ -10,7 +12,8 @@ const App: React.FC = () => {
         <Header />
       <Routes>
         <Route path="/" element={<ProductListComponent />} />
-        {/* 추가 라우트를 여기에 배치할 수 있습니다. */}
+        <Route path="/products/:productId" element={<ProductDetailComponent />} />      
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </Router>
   );
